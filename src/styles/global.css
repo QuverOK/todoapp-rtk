@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: url("./home/bg.png") no-repeat top center / 100% 40%;
+  background: url("./bg.png") no-repeat top center / 100% 40%;
   background-attachment: fixed;
   font-family: "Josefin Sans", system-ui;
   font-optical-sizing: auto;
