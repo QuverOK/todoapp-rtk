@@ -4,8 +4,8 @@ import clsx from "clsx";
 
 type TodoCreationCategories = {
   categories: Categories;
-  activeCategoryId: number;
-  setActiveCategoryId: (id: number) => void;
+  activeCategoryId: string;
+  setActiveCategoryId: (id: string) => void;
   handleCategoryChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -30,7 +30,7 @@ export const TodoCreationCategories: FC<TodoCreationCategories> = ({
               <span
                 className={clsx(
                   "transition-colors",
-                  activeCategoryId === +category.id && "text-functional-actve"
+                  activeCategoryId === category.id && "text-functional-actve"
                 )}
               >
                 {category.name}
