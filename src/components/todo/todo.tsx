@@ -1,5 +1,5 @@
 import { FC, useState, ChangeEvent } from "react";
-import { FilterOptions, TodoType } from "../../types";
+import { FilterOptions, TodoCategoryId, TodoType } from "../../types";
 import { TodoTodos } from "./todo-todos";
 import { TodoCategories } from "./todo-categories";
 import { TodoTip } from "./todo-tip";
@@ -11,7 +11,6 @@ import {
 import { useGetCategoriesQuery } from "../../store/api/categoriesApi";
 import { filterCategories } from "../../utils/filterCategories";
 import { countTodosLeft } from "../../utils/countTodosLeft";
-import { TodoCategoryId } from "../types";
 
 export const Todo: FC = () => {
   const filterOptions: FilterOptions[] = ["Active", "Completed"] as const;
