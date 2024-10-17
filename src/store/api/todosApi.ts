@@ -42,7 +42,7 @@ export const todosApi = createApi({
         url: `/todos/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, id) => [{ type: "Todos", id }],
+      invalidatesTags: (_, __, id) => [{ type: "Todos", id }], // Используйте _ вместо result
       onQueryStarted: async (id, { dispatch, queryFulfilled }) => {
         const patchResult = dispatch(
           todosApi.util.updateQueryData("getTodos", undefined, (draft) => {
@@ -56,15 +56,14 @@ export const todosApi = createApi({
         }
       },
     }),
+
     changeCompletedTodo: builder.mutation<void, TodoType>({
       query: (todo) => ({
         url: `/todos/${todo.id}`,
         method: "PATCH",
         body: { isCompleted: !todo.isCompleted },
       }),
-      invalidatesTags: (result, error, todo) => [
-        { type: "Todos", id: todo.id },
-      ],
+      invalidatesTags: (_, __, todo) => [{ type: "Todos", id: todo.id }],
       onQueryStarted: async (
         { id, isCompleted },
         { dispatch, queryFulfilled }

@@ -29,7 +29,7 @@ export const categoriesApi = createApi({
         url: `/categories/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, id) => [{ type: "Categories", id }],
+      invalidatesTags: (_, __, id) => [{ type: "Categories", id }],
     }),
   }),
 });
