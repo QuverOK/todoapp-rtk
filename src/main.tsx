@@ -5,11 +5,15 @@ import "./styles/global.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routing } from "./pages/routing";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Router>
-      <Routing />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routing />
+      </Router>
+    </Provider>
   </StrictMode>
 );

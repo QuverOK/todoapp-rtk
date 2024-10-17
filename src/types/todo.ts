@@ -1,10 +1,12 @@
 type TodoType = {
   id: string;
   text: string;
-  categoryId: number;
+  categoryId: string;
   isCompleted: boolean;
 };
 
 type Todos = TodoType[];
 
-export type { TodoType, Todos };
+type TodoCategoryId = TodoType["categoryId"];
+
+export type { TodoType, Todos, TodoCategoryId };
